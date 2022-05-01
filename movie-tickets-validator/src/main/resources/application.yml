@@ -1,0 +1,22 @@
+spring: 
+  application: 
+    name: movie-ticket-validator
+  kafka:
+    bootstrap-servers: 52.73.233.11:9092,75.101.239.79:9093
+    #bootstrap-servers: 52.73.233.11:9092
+    producer:
+      #key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      
+movie:
+   tickets: 
+     topic: '${MOVIEW_TICKETS_PRODUCER_TOPIC:movie-tickets-topic}'
+     partitions: '${MOVIE_TICKETS_TOPIC_PARTITIONS:2}'
+     
+server: 
+  port: 5002
+          
+  
+
+  

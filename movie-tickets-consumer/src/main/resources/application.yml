@@ -1,0 +1,21 @@
+spring: 
+  application: 
+    name: movie-ticket-consumer
+  kafka:
+    consumer:
+      bootstrap-servers: 52.73.233.11:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: movie-tickets-listener-group
+      
+movie:
+   tickets: 
+     topic: '${MOVIEW_TICKETS_PRODUCER_TOPIC:movie-tickets-topic}'
+     partitions: '${MOVIE_TICKETS_TOPIC_PARTITIONS:2}'
+     
+server: 
+  port: 5003
+          
+  
+
+  
